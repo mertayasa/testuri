@@ -15,7 +15,7 @@ func Index(ctx *fasthttp.RequestCtx) {
 func Cetak(next fasthttp.RequestHandler) fasthttp.RequestHandler {
 	return func(ctx *fasthttp.RequestCtx) {
 		next(ctx)
-		ctx.WriteString(fmt.Sprint("<br />Accessed from: ", ctx.RequestURI))
+		ctx.WriteString(fmt.Sprint(" -] Accessed from: ", string(ctx.RequestURI())))
 	}
 }
 
